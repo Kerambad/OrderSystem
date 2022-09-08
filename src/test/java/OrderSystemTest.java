@@ -60,4 +60,20 @@ public class OrderSystemTest {
         //THEN
         assertEquals(toTest,expected);
     }
+    @Test
+    void placerOrderReturnsRightMenu() {
+        //GIVEN
+        Menu toTest = new Menu(1,5f,"Pommes Schranke","Pommes","Rot/Weiss","Cola");
+        int testKey = 3;
+        Map<Integer,Menu> testMap = new HashMap<>();
+        testMap.put(testKey,toTest);
+
+        OrderSystem testSystem =new OrderSystem(testMap);
+
+        //WHEN
+        float expected = testSystem.placeOrder(testKey);
+
+        //THEN
+        assertEquals(5f,expected);
+    }
 }

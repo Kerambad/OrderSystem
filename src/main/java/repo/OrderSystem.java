@@ -24,7 +24,17 @@ public class OrderSystem {
     }
     
     public Menu getOrderById(int orderNumber) {
-        System.out.println(menus.get(orderNumber));
         return menus.get(orderNumber);
+    }
+
+    public float placeOrder(int menuNumber) {
+        float price = getOrderById(menuNumber).getPrice();
+        String articel =
+                "Main: " + getOrderById(menuNumber).getMainDish()
+                + "\nSides: " + getOrderById(menuNumber).getSideDish()
+                + "\nBeverage: " + getOrderById(menuNumber).getBeverage()
+                + "\nPrice: " + price;
+        System.out.println(articel);
+        return price;
     }
 }
