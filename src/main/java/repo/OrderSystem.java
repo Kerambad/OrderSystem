@@ -14,7 +14,7 @@ public class OrderSystem {
 
     public Menu addMenu(int key, Menu menu) {
         if (menus.containsKey(key)) {
-            throw new RuntimeException("Menu already exsists.");
+            throw new RuntimeException("Menu already exists.");
         }
         else {
             menus.put(key, menu);

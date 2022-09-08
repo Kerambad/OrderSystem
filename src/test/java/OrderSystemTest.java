@@ -25,7 +25,7 @@ public class OrderSystemTest {
         assertEquals(new Menu(1,5f,"Pommes Schranke","Pommes","Rot/Weiss","Cola"),expected);
     }
     @Test
-    void addMenuAddMenuAlreadyExcsists() {
+    void addMenuThrowsErrorIfMenuAlreadyExists() {
         //GIVEN
         Menu toTest = new Menu(1,5f,"Pommes Schranke","Pommes","Rot/Weiss","Cola");
         int testKey = 3;
@@ -36,7 +36,7 @@ public class OrderSystemTest {
 
         //WHEN
         try {
-            testSystem.addMenu(testKey,toTest);
+            testSystem.addMenu(3,toTest);
             fail();
         }
         //THEN
